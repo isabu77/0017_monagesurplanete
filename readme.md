@@ -1,4 +1,4 @@
-# Mon age sur la planète
+# Mon age sur les planètes
 ## la maquette
 
 ## la page HTML
@@ -9,11 +9,11 @@
 - un bouton 'OK'
 
 ### un texte "mon âge sur la planète " + nom de la planète + "est :"
-### l'âge sous la forme " aa ans mm mois jjj jours"
+### l'âge sous la forme " aa ans"
 
-## la fonction Javascript : CalculAge(dateNaissance, planete)
-### en entrée : la date de naissance et la planète choisie
-### en sortie : l'âge en String sous la forme " aa ans mm mois jjj jours"
+## la fonction Javascript : CalculAge(form)
+### en entrée : la date de naissance et la planète choisie dans un formulaire
+### en sortie : affiche les âges dans les inputs "planètes" du formulaire sous la forme " aa ans"
 
 ## Recherches
 
