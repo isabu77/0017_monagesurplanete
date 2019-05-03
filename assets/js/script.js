@@ -47,6 +47,14 @@ function int_zero(x)
         return parseInt(x, 10);
 }
 
+function getAgeInYearAndDays(age, diviseur, coef)
+{   
+    var days = int_zero( coef * age ) / coef;
+    var years = int_zero( coef * age / diviseur ) / coef;
+    // supprimer les décimales
+    return years.toFixed(0).toString() + " ans ou " + days.toFixed(0).toString() + " jours";
+}
+
 function calculAge(form)
 {
     today = (new Date()).getTime();
@@ -61,23 +69,23 @@ function calculAge(form)
 	age = (today - birthdate) / (1000 * 3600 * 24);
     if (age > 0.0) {
 //	Terre
-        form.earth_year.value = getAgeInYear(int_zero( 10 * age / 365.26 ) / 10);
+        form.earth_year.value = getAgeInYearAndDays(age, 365.26, 10);
 //  Venus
-        form.venus_year.value = getAgeInYear(int_zero( 10 * age / 224.7 ) / 10);
+        form.venus_year.value = getAgeInYearAndDays(age, 224.7 , 10);
 //  Mercure
-        form.mercury_year.value = getAgeInYear(int_zero( 10 * age / 87.97 ) / 10);
- //  Jupiter
-         form.jupiter_year.value = getAgeInYear(int_zero( 100 * age / 4332.71 ) / 100);
+        form.mercury_year.value = getAgeInYearAndDays(age, 87.97, 10);
+ //  JupitergetAgeInYearAndDays
+         form.jupiter_year.value = getAgeInYearAndDays(age, 4332.71, 100);
 //	Mars
-        form.mars_year.value = getAgeInYear(int_zero( 10 * age / 686.98 ) / 10);
+        form.mars_year.value = getAgeInYearAndDays(age, 686.98, 10);
 //	Saturne
-        form.saturn_year.value = getAgeInYear(int_zero( 100 * age / 10759.5 ) / 100);
+        form.saturn_year.value = getAgeInYearAndDays(age, 10759.5, 100);
 //  Pluton
-        form.pluto_year.value = getAgeInYear(int_zero( 1000 * age / 90800 ) / 1000);
+        form.pluto_year.value = getAgeInYearAndDays(age, 90800, 1000);
 //	Uranus
-        form.uranus_year.value = getAgeInYear(int_zero( 100 * age / 30685 ) / 100);
+        form.uranus_year.value = getAgeInYearAndDays(age, 30685, 100);
 //	Neptune
-        form.neptune_year.value = getAgeInYear(int_zero( 100 * age / 60190 ) / 100);
+        form.neptune_year.value = getAgeInYearAndDays(age, 60190, 100);
     }
 
 }
